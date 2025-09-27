@@ -1,0 +1,12 @@
+file/rc fit1-0.6ma-55-1.2x.cas	
+file/rd fit1-0.6ma-55-1.2x.dat	
+file/auto/root-name	
+fit1-0.6ma-55-1.2x	
+file/auto/data	
+2000	
+file/auto/case	
+each	
+quit	
+quit	
+solve/iterate	
+300000	

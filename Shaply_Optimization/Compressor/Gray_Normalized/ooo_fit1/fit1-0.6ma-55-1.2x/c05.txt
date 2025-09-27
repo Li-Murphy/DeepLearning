@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#LJRS -q post1
+
+#LJRS -N test
+
+#LJRS -l nodes=1:ppn=10
+Version=2ddp
+
+cd $LJRS_O_WORKDIR
+
+export rDir=`pwd`
+
+echo $rDir
+export joufile=c05.jou
+
+export outfile=res2.out
+
+INPUT=$rDir/$joufile
+
+OUTPUT=$rDir/$outfile
+
+nprocs=$(cat $LJRS_NODEFILE | wc -l)
+
+fluent  $Version -t$nprocs -cnf=$LJRS_NODEFILE -g -pib -i $INPUT >$OUTPUT 2>&1
+
+
+
+#fluent -pethernet -g $Version -t$ncpus -cnf=pnodes -i $INPUT >$OUTPUT 2>&1
